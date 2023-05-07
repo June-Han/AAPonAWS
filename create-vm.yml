@@ -8,7 +8,7 @@
       amazon.aws.ec2_instance:
         name: "public-compute-instance"
         key_name: "sa-aaponaws-mar2023"
-        instance_type: t3.medium
+        instance_type: t2.micro
         security_group: default
         region: us-east-1
         network:

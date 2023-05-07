@@ -1,0 +1,12 @@
+- name: RHEL Testing
+  hosts: localhost
+  gather_facts: false
+  become: true
+
+  tasks:
+    - name: Install mariadb RHEL8
+      ansible.builtin.dnf:
+        name: 
+          - httpd < 2.4
+          - mariadb
+        state: absent
