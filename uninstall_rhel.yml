@@ -1,5 +1,5 @@
 - name: RHEL Testing
-  hosts: localhost
+  hosts: 10.1.0.30
   gather_facts: false
   become: true
 
