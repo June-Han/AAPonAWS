@@ -1,0 +1,42 @@
+- name: RHEL Testing
+  hosts: 52.91.165.209
+  become: true
+
+  tasks:
+    - name: Output Something
+      ansible.builtin.debug:
+        msg: "Hello World from AWS"
+
+    - name: Install mariadb RHEL8
+      ansible.builtin.dnf:
+        name: 
+          - httpd < 2.4
+          - mariadb
+        state: present
+
+    - name: Check mariadb version
+      command: mariadb --version
+      register: mariadb_version
+
+    - name: Output current mariadb version
+      ansible.builtin.debug:
+        var: mariadb_version
+
+    - name: Install latest mariadb version
+      ansible.builtin.yum_repository:
+        name: MariaDB
+        baseurl: https://rpm.mariadb.org/10.6/rhel/$releasever/$basearch
+        gpgkey: https://rpm.mariadb.org/RPM-GPG-KEY-MariaDB
+        gpgcheck: yes
+
+    - name: Check mariadb version
+      command: mariadb --version
+      register: mariadb_version
+
+    - name: Output current mariadb version
+      ansible.builtin.debug:
+        var: mariadb_version
+
+    - name: Check httpd version
+      command: mariadb --version
+      register: mariadb_version

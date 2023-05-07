@@ -1,0 +1,16 @@
+- name: Provision EC2 instance
+  hosts: localhost
+  connection: local
+  gather_facts: False
+  
+  tasks: 
+    - name: start an instance with a public IP address
+      amazon.aws.ec2_instance:
+        name: "public-compute-instance"
+        key_name: "sa-aaponaws-mar2023"
+        instance_type: t3.medium
+        security_group: default
+        region: us-east-1
+        network:
+          assign_public_ip: true
+        image_id: ami-0c41531b8d18cc72b
