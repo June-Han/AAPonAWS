@@ -16,6 +16,7 @@
         state: present
 
     - name: Check mariadb version
+      become: true
       command: mariadb --version
       register: mariadb_version
 
