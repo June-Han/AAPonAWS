@@ -1,7 +1,7 @@
 - name: RHEL Testing
   hosts: all
   gather_facts: False
-  become: all
+  become: true
 
   tasks:
     - name: Output Something

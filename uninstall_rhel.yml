@@ -1,7 +1,7 @@
 - name: RHEL Testing
   hosts: all
   gather_facts: false
-  become: all
+  become: true
 
   tasks:
     - name: Install mariadb RHEL8
