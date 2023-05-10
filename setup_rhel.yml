@@ -1,5 +1,7 @@
 - name: RHEL Testing
   hosts: 192.168.2.120
+  gather_facts: False
+  become: true
 
   tasks:
     - name: Output Something
