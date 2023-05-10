@@ -1,5 +1,5 @@
 - name: RHEL Testing
-  hosts: all
+  hosts: 192.168.2.120
 
   tasks:
     - name: Output Something
@@ -9,7 +9,7 @@
     - name: Install mariadb RHEL8
       ansible.builtin.dnf:
         name: 
-          - httpd
+          - httpd =< 2.4
           - mariadb
         state: present
 
