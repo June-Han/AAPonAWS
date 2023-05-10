@@ -1,5 +1,5 @@
 - name: RHEL Testing
-  hosts: all
+  hosts: Demo_VM
   gather_facts: False
   become: true
 
@@ -11,7 +11,7 @@
     - name: Install mariadb RHEL8
       ansible.builtin.dnf:
         name: 
-          - httpd =< 2.4
+          - httpd
           - mariadb
         state: present
 

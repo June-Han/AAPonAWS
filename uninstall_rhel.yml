@@ -1,5 +1,5 @@
 - name: RHEL Testing
-  hosts: all
+  hosts: Demo_VM
   gather_facts: false
   become: true
 
